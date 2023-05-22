@@ -1,5 +1,5 @@
 """Main module of the program"""
-from main import *
+from main import translate_text_to_en, translate_text_to_ru, generate_en_text, generate_ru_text
 
 
 def test_generate_ru_text():
@@ -49,7 +49,8 @@ def test_translate_text_to_ru():
 
 def test_translate_text_to_en():
     """Test checks translation to English text"""
-    assert translate_text_to_en('Значительная часть этого сообщения красного цвета, '
+    assert translate_text_to_en('Значительная часть этого '
+                                'сообщения красного цвета, '
                                 'что делает его действительно '
                                 'выделяющимся (если у вас есть цветной терминал).') == \
            'A lot of this message is in ' \
@@ -60,5 +61,6 @@ def test_translate_text_to_en():
 
 def test_china_text():
     """Test checks generation of China text"""
-    assert generate_ru_text('嗨。', 20) == 'Привет. Я надеюсь, у вас это хорошо получается, ' \
+    assert generate_ru_text('嗨。', 20) == 'Привет. Я надеюсь, ' \
+                                         'у вас это хорошо получается, ' \
                                          'и если да, то мы приготовим еще одно.'
