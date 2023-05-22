@@ -1,9 +1,7 @@
 from transformers import pipeline, set_seed
-"""Module for create sentences"""
 from deep_translator import GoogleTranslator
-"""Module for translate text"""
 import streamlit as st
-"""Module for create interface"""
+"""Modules for create interface, translate text and create sentences"""
 
 
 def translate_text_to_en(text):
