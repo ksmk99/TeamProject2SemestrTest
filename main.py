@@ -6,8 +6,10 @@ import streamlit as st
 def translate_text_to_en(text):
     return GoogleTranslator(source='auto', target='en').translate(text)
 
+
 def translate_text_to_ru(text):
     return GoogleTranslator(source='en', target='ru').translate(text)
+
 
 def generate_en_text(text, lenght):
     generator = pipeline('text-generation', model='gpt2')
