@@ -11,17 +11,18 @@ def translate_text_to_ru(text):
     return GoogleTranslator(source='en', target='ru').translate(text)
 
 
-def generate_en_text(text, lenght):
+def generate_en_text(text, length):
     generator = pipeline('text-generation', model='gpt2')
     set_seed(42)
-    txt = generator(text, max_length=lenght, num_return_sequences=1)[0]['generated_text']
+    txt = generator(text, max_length=length,
+                    num_return_sequences=1)[0]['generated_text']
 
     return txt
 
 
-def generate_ru_text(text, lenght):
+def generate_ru_text(text, length):
     en_text = translate_text_to_en(text)
-    generated_en_text = generate_en_text(en_text, lenght)
+    generated_en_text = generate_en_text(en_text, length)
     generated_ru_text = translate_text_to_ru(generated_en_text)
 
     return generated_ru_text
@@ -29,7 +30,8 @@ def generate_ru_text(text, lenght):
 
 if __name__ == '__main__':
     title = st.text_input('Введите свой текст:', 'Life of Brian')
-    count = st.slider('Выберите максимальное количество слов в предложении', 20, 400, 20)
+    count = st.slider('Выберите максимальное '
+                      'количество слов в предложении', 20, 400, 20)
     if st.button('Начать'):
         result = generate_ru_text(title, count)
         st.write(result)
