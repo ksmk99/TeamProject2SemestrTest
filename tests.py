@@ -9,7 +9,7 @@ def test_generate_ru_text():
 def test_generate_en_text():
     assert generate_en_text('How are you',
                             22) == "How are you on vacation? I'm coming back to the country...to visit my " \
-                                   "family...I'm working "
+                                   "family...I'm working"
 
 
 def test_generate_en_text_len():
@@ -34,7 +34,7 @@ def test_translate_text_to_ru():
                                                                                                        'каталоги ' \
                                                                                                        'pycache, ' \
                                                                                                        'которые могут ' \
-                                                                                                       'помочь. '
+                                                                                                       'помочь.'
 
 
 def test_translate_text_to_en():
@@ -42,9 +42,9 @@ def test_translate_text_to_en():
                                 'выделяющимся (если у вас есть цветной терминал).') == 'A lot of this message is in ' \
                                                                                        'red, which makes it really ' \
                                                                                        'stand out (if you have a ' \
-                                                                                       'color terminal). '
+                                                                                       'color terminal).'
 
 
 def test_china_text():
     assert generate_ru_text('嗨。', 20) == 'Привет. Я надеюсь, у вас это хорошо получается, и если да, то мы приготовим ' \
-                                         'еще одно. '
+                                         'еще одно.'
